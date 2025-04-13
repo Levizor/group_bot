@@ -42,6 +42,7 @@ class YTDownloader:
         """Asynchronously downloads the YouTube video and returns a DownloadedVideo object."""
 
         ydl_opts = {
+            'cookiefile': 'cookies.txt',
             'outtmpl': str(self.output_dir / '%(title)s.%(ext)s'),  # Save video with title as filename
             'format': format,  # Use the format provided (default is a balanced 720p video)
             'max_filesize': 50*1024*1024,
